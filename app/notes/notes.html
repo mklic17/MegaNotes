@@ -1,12 +1,13 @@
+<!-- Sidebar -->
 <div class="container">
   <div class="row">
     <nav class="col-xs-4" id="sidebar">
       <button class="btn btn-default">
         New Note
       </button>
-      <ul>
-        <li ng-repeat="note in notes track by $index">
-          {{note.title}}: {{note.body}}
+      <ul id = "notes">
+        <li ng-repeat="note in notes track by $index"> <!--note is just the name to each thing inside of notes -->
+          {{note.title}}
           <a ng-click="removeNote($index)">(remove)</a>
           <a ng-click="editNote(note)">(edit)</a>
         </li>

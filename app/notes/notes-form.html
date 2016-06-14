@@ -2,17 +2,21 @@
 <form ng-submit="addNote()">
   <p>
     <input
+      class = "note-title"
       ng-model = "note.title"
       type="text"
       name="title"
       id="note_title"
-      placeholder="Title your note">
+      placeholder="Title your note"
+      required>
   </p>
   <p>
     <textarea
+      class = "note-body"
       ng-model = "note.body"
       name="body_html"
       placeholder="Just start typing..."
+      required
       ></textarea>
   </p>
   <div class="form-actions">
