@@ -29,11 +29,11 @@
         });
 
 
-    $scope.note = {title: '', body: ''}; //Empty object, the form's title and body
+    $scope.note = {title: '', body_html: ''}; //Empty object, the form's title and body
 
     $scope.addNote = function(){
-      $scope.notes.push($scope.note);
-      $scope.note = { title: '', body: ''}; //What is in the form
+      NotesService.create($scope.note);
+      $scope.note = { title: '', body_html: ''}; //What is in the form
     };
     $scope.removeNote = function(index){
       $scope.notes.splice(index, 1);
