@@ -27,4 +27,11 @@ angular.module('meganote.notes', [
     $scope.notes.push($scope.note);
     $scope.note = {};
   }
+  $scope.removeNote = function(index){
+    $scope.notes.splice(index, 1);
+  }
+  $scope.editNote = function(note){
+    $scope.note = note;
+  }
+
 });
