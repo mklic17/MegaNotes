@@ -30,7 +30,7 @@
 
       $scope.addNote = function(){
         $scope.notes.push($scope.note);
-        $scope.note = {};
+        $scope.note = {}; //What is in the form
       }
       $scope.removeNote = function(index){
         $scope.notes.splice(index, 1);

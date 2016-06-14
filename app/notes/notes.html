@@ -6,10 +6,8 @@
         New Note
       </button>
       <ul id = "notes">
-        <li ng-repeat="note in notes track by $index"> <!--note is just the name to each thing inside of notes -->
+        <li ng-repeat="note in notes track by $index" ng-click="editNote(note)"> <!--note is just the name to each thing inside of notes -->
           {{note.title}}
-          <a ng-click="removeNote($index)">(remove)</a>
-          <a ng-click="editNote(note)">(edit)</a>
         </li>
       </ul>
     </nav>
