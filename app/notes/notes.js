@@ -28,19 +28,24 @@
           $scope.notes = NotesService.notes; //The actual notes on the sidebar
         });
 
-
-    $scope.note = {title: '', body_html: ''}; //Empty object, the form's title and body
+    $scope.clearForm = function(){
+      $scope.note = { title: '', body_html: '' };
+    };
 
     $scope.addNote = function(){
       NotesService.create($scope.note);
-      $scope.note = { title: '', body_html: ''}; //What is in the form
+      $scope.clearForm(); //What is in the form
     };
+
     $scope.removeNote = function(index){
       $scope.notes.splice(index, 1);
     };
+
     $scope.editNote = function(note){
-      $scope.note = note;
+      $scope.note = angular.copy(note);
     };
+
+    $scope.clearForm(); //Empty object, the form's title and body
   }
 
 }());
