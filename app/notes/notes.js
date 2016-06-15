@@ -28,13 +28,20 @@
           $scope.notes = NotesService.notes; //The actual notes on the sidebar
         });
 
+
+
     $scope.clearForm = function(){
       $scope.note = { title: '', body_html: '' };
     };
 
     $scope.addNote = function(){
-      NotesService.create($scope.note);
-      $scope.clearForm(); //What is in the form
+      if ($scope.note._id) {
+        NotesService.update($scope.note);
+      }
+      else {
+        NotesService.create($scope.note);
+        $scope.clearForm(); //What is in the form
+      }
     };
 
     $scope.removeNote = function(index){
