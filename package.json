@@ -14,5 +14,8 @@
     "prestart": "npm install",
     "postinstall": "bower install",
     "preupdate-webdriver": "npm install"
+  },
+  "dependencies": {
+    "sanitize-html": "^1.12.0"
   }
 }
