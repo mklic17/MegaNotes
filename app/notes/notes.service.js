@@ -3,7 +3,7 @@
     .service('NotesService', NotesService);
 
   NotesService.$inject = ['$http'];
-  var url = 'localhost:3030';
+  var url = 'http://localhost:3030/';
   function NotesService($http) {
     var service = this;
     service.notes = [];
