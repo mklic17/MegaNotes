@@ -15,8 +15,5 @@
     "postinstall": "bower install",
     "preupdate-webdriver": "npm install"
   },
-  "dependencies": {
-    "html-to-text": "^2.1.0",
-    "sanitize-html": "^1.12.0"
-  }
+  "dependencies": {}
 }

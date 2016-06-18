@@ -2,13 +2,15 @@
 <div class="container">
   <div class="row">
     <nav class="col-xs-4" id="sidebar">
-      <button class="btn btn-default" ng-click="clearForm()">
+      <button class="btn btn-default" ui-sref="notes.form({ noteId: undefined })">
         New Note
       </button>
       <ul id = "notes">
-        <li ng-repeat="note in notes | orderBy: '-update_at' track by $index " ng-click="editNote(note)"> <!--note is just the name to each thing inside of notes -->
-          <div class="note-title">{{note.title}}</div>
-          <div class="note-body">{{note.body_text}}</div>
+        <li ng-repeat="note in notes | orderBy: '-update_at' track by $index " >
+          <a class = "note" ui-sref="notes.form({ noteId: note._id })">
+            <div class="note-title">{{note.title}}</div>
+            <div class="note-body" ng-bind-html="note.body_html"></div>
+          </a>
         </li>
       </ul>
     </nav>
